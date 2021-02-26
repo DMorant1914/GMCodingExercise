@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CodingExcercise</string>
+    <string name="artist_name">Artist Name!</string>
+    <string name="search_text">search</string>
+</resources>
