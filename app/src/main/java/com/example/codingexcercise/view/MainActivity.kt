@@ -2,12 +2,15 @@ package com.example.codingexcercise.view
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.example.codingexcercise.R
@@ -15,6 +18,8 @@ import com.example.codingexcercise.model.data.MusicItem
 import com.example.codingexcercise.view.adapter.MusicAdapter
 import com.example.codingexcercise.viewmodel.MusicViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import java.sql.Date
+import java.text.SimpleDateFormat
 
 class MainActivity : AppCompatActivity(), MusicAdapter.MusicSelector {
 
@@ -75,7 +80,6 @@ class MainActivity : AppCompatActivity(), MusicAdapter.MusicSelector {
     }
 
     override fun selectTrack(track: MusicItem) {
-
         PlayPreview(track)
         Toast.makeText(this, track.trackName, Toast.LENGTH_SHORT).show()
 

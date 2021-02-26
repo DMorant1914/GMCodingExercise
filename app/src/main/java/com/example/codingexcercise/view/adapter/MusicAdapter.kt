@@ -7,19 +7,23 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.codingexcercise.R
 import com.example.codingexcercise.model.data.MusicItem
+import com.example.codingexcercise.view.MainActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_layout.view.*
+import java.sql.Date
+import java.text.SimpleDateFormat
 
 class MusicAdapter(var dataSet: List<MusicItem>, val musicSelector: MusicSelector)
     : RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
 
-
     interface MusicSelector {
         fun selectTrack(track: MusicItem)
+
     }
    inner class MusicViewHolder(val musicView: View) :
         RecyclerView.ViewHolder(musicView) {
 
+       ;
         fun onBind(dataItem: MusicItem ){
 
 
@@ -29,8 +33,6 @@ class MusicAdapter(var dataSet: List<MusicItem>, val musicSelector: MusicSelecto
             musicView.findViewById<TextView>(R.id.tv_genre).text ="Genre: " + dataItem.primaryGenreName
             musicView.findViewById<TextView>(R.id.tv_release).text ="Release Date: " + dataItem.releaseDate
             musicView.findViewById<TextView>(R.id.tv_price).text = "Price: $"+ dataItem.trackPrice.toString()
-
-
 
             itemView.setOnClickListener {
                 musicSelector.selectTrack(dataItem)
